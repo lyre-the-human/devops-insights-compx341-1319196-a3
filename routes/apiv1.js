@@ -10,8 +10,8 @@ var request = REQUEST.defaults( {
 var OPENWEATHERURL = "http://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
 
 exports.getWeather = function(req, res) {
-	var cityName = req.query.q;
-	if( (zip === null) || (typeof(q) === 'undefined') ) {
+	var q = req.query.q;
+	if( (q === null) || (typeof(q) === 'undefined') ) {
 		return res.status(400).send('city name missing');
 	}
 
