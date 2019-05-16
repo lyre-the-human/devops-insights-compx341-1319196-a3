@@ -89,7 +89,7 @@
 
       var body = {
         cod: 200,
-        name: 'Hamilton,nz',
+        name: 'Hamilton',
         weather: [
           {
             main: 'cold'
