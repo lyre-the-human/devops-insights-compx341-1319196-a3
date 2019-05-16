@@ -46,7 +46,7 @@ exports.getWeather2 = function(req, res) {
 		return res.status(400).send('city name missing');
 	}
 
-	var aurl = OPENWEATHERURL + '&q=' + q + ',us';
+	var aurl = OPENWEATHERURL + '&q=' + q + ',nz';
 
 	request({
 		method: 'GET',
