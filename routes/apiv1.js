@@ -10,13 +10,13 @@ var request = REQUEST.defaults( {
 var OPENWEATHERURL = "http://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
 
 exports.getWeather = function(req, res) {
-	var q = req.query.q;
+	var city = req.query.q;
 	console.log(req.query.q)
-	if( (q === null) || (typeof(q) === 'undefined') ) {
+	if( (city === null) || (typeof(city) === 'undefined') ) {
 		return res.status(400).send('city name missing');
 	}
 
-	var aurl = OPENWEATHERURL + '&q=' + q + ',nz';
+	var aurl = OPENWEATHERURL + '&q=' + city + ',nz';
 
 	request({
 		method: 'GET',
