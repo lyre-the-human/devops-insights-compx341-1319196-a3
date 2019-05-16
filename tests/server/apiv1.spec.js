@@ -45,7 +45,7 @@
     it('with valid city name and error from request call', function() {
       reqMock = {
         query: {
-          q: "Hamilton"
+          q: "Hamilton,nz"
         }
       };
 
@@ -64,7 +64,7 @@
     it('with incomplete city name', function() {
       reqMock = {
         query: {
-          q: "Hamilton"
+          q: "Hamilton,nz"
         }
       };
 
@@ -83,13 +83,13 @@
     it('with valid city name', function() {
       reqMock = {
         query: {
-          q: "Hamilton"
+          q: "Hamilton,nz"
         }
       };
 
       var body = {
         cod: 200,
-        name: 'Hamilton',
+        name: 'Hamilton,nz',
         weather: [
           {
             main: 'cold'
@@ -132,7 +132,7 @@
     it('with valid city name and error from request call', function() {
       reqMock = {
         query: {
-          q:'Hamilton'
+          q:'Hamilton,nz'
         }
       };
 
@@ -151,7 +151,7 @@
     it('with incomplete city name', function() {
       reqMock = {
         query: {
-          q:'Hamilton'
+          q:'Hamilton,nz'
         }
       };
 
@@ -170,13 +170,13 @@
     it('with valid city name', function() {
       reqMock = {
         query: {
-          q: 'Hamilton'
+          q: 'Hamilton,nz'
         }
       };
 
       var body = {
         cod: 200,
-        name: 'Hamilton',
+        name: 'Hamilton,nz',
         weather: [
           {
             main: 'cold'
