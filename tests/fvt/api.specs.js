@@ -1,4 +1,3 @@
-
 (function () {
 
     'use strict';
@@ -13,6 +12,7 @@
 
     var appUrl = process.env.APP_URL;
 
+
     describe('Get Weather', function() {
 
     	it('with valid city name', function(done) {
@@ -22,7 +22,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather?zip=3216'
+              url: appUrl + '/api/v1/getWeather?zip=Hamilton'
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
@@ -60,14 +60,14 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather?zip=3216'
+              url: appUrl + '/api/v1/getWeather?zip=Hamilton'
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
           	} else {
               assert.equal(resp.statusCode, 200);
               var pbody = JSON.parse(body);
-              assert(pbody.city === 'Hamilton,nz', "City name does not match");
+              assert(pbody.city === 'Hamilton', "City name does not match");
               done();
             }
         });
