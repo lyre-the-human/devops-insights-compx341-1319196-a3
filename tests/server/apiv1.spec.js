@@ -114,7 +114,7 @@
     });
   });
 
-/*
+
   describe('Get Weather 2', function() {
 
     it('with without city name', function() {
@@ -170,7 +170,7 @@
     it('with valid city name', function() {
       reqMock = {
         query: {
-          q: 'Hamilton,nz'
+          q: 'Hamilton'
         }
       };
 
@@ -199,6 +199,6 @@
       assert(resMock.send.lastCall.args[0].city === 'Hamilton', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
       assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 78 C', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
     });
-  }); */
+  }); 
 
 }());
