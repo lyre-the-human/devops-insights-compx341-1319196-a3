@@ -22,14 +22,14 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather?q=Hamilton,nz'
+              url: appUrl + '/api/v1/getWeather?zip=Hamilton,nz'
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
           	} else {
               assert.equal(resp.statusCode, 200);
               var pbody = JSON.parse(body);
-              assert(pbody.city === 'Hamilton,nz', "City name does not match");
+              assert(pbody.city === 'Hamilton', "City name does not match");
               done();
             }
         });
@@ -60,7 +60,7 @@
         }
         request({
       		method: 'GET',
-              url: appUrl + '/api/v1/getWeather?city=Hamilton,nz'
+              url: appUrl + '/api/v1/getWeather?zip=Hamilton,nz'
           }, function(err, resp, body) {
           	if(err) {
           		assert.fail('Failed to get the response');
