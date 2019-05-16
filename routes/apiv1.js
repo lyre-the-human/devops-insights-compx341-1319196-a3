@@ -11,7 +11,6 @@ var OPENWEATHERURL = "http://api.openweathermap.org/data/2.5/weather?appid=6b7b4
 
 exports.getWeather = function(req, res) {
 	var city = req.query.q;
-	console.log(req.query.q)
 	if( (city === null) || (typeof(city) === 'undefined') ) {
 		return res.status(400).send('city name missing');
 	}
