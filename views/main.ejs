@@ -35,13 +35,36 @@
           center: {lat: -41.287, lng: 174.773},
           zoom: 8
         });
-      }
-      
+              
        var marker = new google.maps.Marker({
           position: {lat: -41.287, lng: 174.773},
           map: map,
           title: 'Hello World!'
         });
+      }
+      
+      geocoder = new google.maps.Geocoder();
+
+function codeAddress() {
+
+    //In this case it gets the address from an element on the page, but obviously you  could just pass it to the method instead
+    var address = document.getElementById( 'zip1' ).value;
+
+    geocoder.geocode( { 'address' : address }, function( results, status ) {
+        if( status == google.maps.GeocoderStatus.OK ) {
+
+            //In this case it creates a marker, but you can get the lat and lng from the location.LatLng
+            map.setCenter( results[0].geometry.location );
+            var markerTest = new google.maps.Marker( {
+                map     : map,
+                position: results[0].geometry.location
+            } );
+        } else {
+            alert( 'BIG SAD ALERT: ' + status );
+        }
+    } );
+}
+
     </script>
     
     
