@@ -41,16 +41,16 @@
           map: map,
           title: 'Hello World!'
         });
-      }
-      
-      geocoder = new google.maps.Geocoder();
+        
+ geocoder = new google.maps.Geocoder();
 
 function codeAddress() {
 
     //In this case it gets the address from an element on the page, but obviously you  could just pass it to the method instead
     var address = document.getElementById( 'zip1' ).value;
+    address = 'Upper Hutt'
 
-    geocoder.geocode( { 'address' : address }, function( results, status ) {
+    geocoder.geocode( { 'address' : address , NZ}, function( results, status ) {
         if( status == google.maps.GeocoderStatus.OK ) {
 
             //In this case it creates a marker, but you can get the lat and lng from the location.LatLng
@@ -63,6 +63,8 @@ function codeAddress() {
             alert( 'BIG SAD ALERT: ' + status );
         }
     } );
+      }
+      
 }
 
     </script>
