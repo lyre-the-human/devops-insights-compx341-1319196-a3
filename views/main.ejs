@@ -47,7 +47,7 @@
 function codeAddress() {
 
     //In this case it gets the address from an element on the page, but obviously you  could just pass it to the method instead
-  //  var address = document.getElementById( 'zip1' ).value;
+    var address = document.getElementById( 'zip1' ).value;
 
     geocoder.geocode( { 'address' : address + ', NZ'}, function( results, status ) {
         if( status == "OK" ) {
