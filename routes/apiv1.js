@@ -8,7 +8,6 @@ var request = REQUEST.defaults( {
 });
 
 var OPENWEATHERURL = "http://api.openweathermap.org/data/2.5/weather?appid=6b7b471967dd0851d0010cdecf28f829&units=metric";
-initMap();
 exports.getWeather = function(req, res) {
 	var city = req.query.q;
 	if( (city === null) || (typeof(city) === 'undefined') ) {
